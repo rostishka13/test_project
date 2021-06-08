@@ -14,6 +14,10 @@
 
     {% for item in groups %}
         <h3>  {{ forloop.counter }}:{{item.group}} </h3>
+        <a href="{% url 'edit_group' item.pk %}" class="btn btn-outline-warning">Edit</a>
+        <a href="{% url 'delete_group' item.pk %}" class="btn btn-outline-danger">Delete</a>
+
+
     {% endfor %}
 
     

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+    - Edit  Group
+{% endblock title %}
+
+{% block content %}
+   
+<h1>Edit Group</h1>
+        <div class="form-group">
+            <form action="" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button class="btn btn-secondary">Edit Group</button>
+        </form>
+        </div>
+{% endblock content %}

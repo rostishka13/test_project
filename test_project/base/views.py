@@ -4,7 +4,7 @@ from django.db import models
 from django.views.generic.edit import UpdateView
 from .models import Groups, List_of_Users
 from django.views.generic import ListView, CreateView, DeleteView
-from .forms import AddUserForm, AddGroupForm, EditUserForm
+from .forms import AddUserForm, AddGroupForm, EditUserForm,EditGroupForm
 from django.urls import reverse_lazy
 # Create your views here.
 class HomeView(ListView):
@@ -43,5 +43,18 @@ class DeleteUserView(DeleteView):
     success_url = reverse_lazy('users')
     template_name = 'base/delete_user.html'
 
-    
+
+
+
+class EditGroupView(UpdateView):
+    model = Groups
+    form_class = EditGroupForm
+    success_url = reverse_lazy('users')
+    template_name = 'base/edit_group.html'   
+
+
+class DeleteGroupView(DeleteView):
+    model = Groups
+    success_url = reverse_lazy('users')
+    template_name = 'base/delete_group.html'
    

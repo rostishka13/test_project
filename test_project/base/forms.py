@@ -15,3 +15,9 @@ class EditUserForm(forms.ModelForm):
      class Meta:
         model = List_of_Users
         fields = '__all__'
+
+
+class EditGroupForm(forms.ModelForm):
+     class Meta:
+        model = Groups
+        fields = '__all__'

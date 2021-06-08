@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    -  Groups
+{% endblock title %}
+
+{% block content %}
+    <h1>Groups</h1>
+
+    {% for item in groups %}
+    <h3>  {{ forloop.counter }}:{{item.group}} </h3>
+    {% endfor %}
+{% endblock content %}

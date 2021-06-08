@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+    - Delete  Users
+{% endblock title %}
+
+{% block content %}
+   
+<h1>Delete User</h1>
+        <div class="form-group">
+            <form action="" method="post">
+            {% csrf_token %}
+            Are YOU sure??
+            <button class="btn btn-danger">Delete User</button>
+        </form>
+        </div>
+{% endblock content %}

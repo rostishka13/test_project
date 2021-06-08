@@ -13,7 +13,9 @@
     <h1>Users</h1>
     {% for user in users %}
         <h3>  {{ forloop.counter }}: {{user.first_name}} - {{user.email}}</h3> 
-        <!-- <a href="{% url 'add_user' %}" class="link-secondary btn-close"></a> -->
+        <a href="{% url 'edit_user' user.pk %}" class="btn btn-outline-warning">Edit</a>
+        <a href="{% url 'delete_user' user.pk %}" class="btn btn-outline-danger">Delete</a>
+
 
     {% endfor %}
 

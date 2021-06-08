@@ -6,9 +6,18 @@
 {% endblock title %}
 
 {% block content %}
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a  href="{% url 'add_group' %}" class="btn btn-outline-primary" type="button">Add Group</a>
+</div>    
+    
     <h1>Groups</h1>
 
     {% for item in groups %}
-    <h3>  {{ forloop.counter }}:{{item.group}} </h3>
+        <h3>  {{ forloop.counter }}:{{item.group}} </h3>
     {% endfor %}
+
+    
+        
+
+    
 {% endblock content %}

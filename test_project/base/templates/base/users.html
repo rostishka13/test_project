@@ -8,16 +8,38 @@
 {% block content %}
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
     <a  href="{% url 'add_user' %}" class="btn btn-outline-primary" type="button">Add User</a>
+</div>
+<h1>Users</h1>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">username</th>
+        <th scope="col">email</th>
+        <th scope="col">group</th>
+        <th scope="col">action</th>
+      </tr>
+    </thead>
+   
+    <tbody>
+        {% for user in users %}
+      <tr>
+        
+        <th scope="row">{{ forloop.counter }}</th>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.group}}</td>
+        <td> <a href="{% url 'edit_user' user.pk %}" class="btn btn-outline-warning">Edit</a>
+            <a href="{% url 'delete_user' user.pk %}" class="btn btn-outline-danger">Delete</a>
+    </td>
     
-  </div>
-    <h1>Users</h1>
-    {% for user in users %}
-        <h3>  {{ forloop.counter }}: {{user.first_name}} - {{user.email}}</h3> 
-        <a href="{% url 'edit_user' user.pk %}" class="btn btn-outline-warning">Edit</a>
-        <a href="{% url 'delete_user' user.pk %}" class="btn btn-outline-danger">Delete</a>
+      </tr>
+      {% endfor %}
+      
+    </tbody>
+  </table>
 
-
-    {% endfor %}
 
     
 {% endblock content %}

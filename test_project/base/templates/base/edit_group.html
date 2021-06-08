@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags%}
 
 
 {% block title %}
@@ -12,8 +13,8 @@
         <div class="form-group">
             <form action="" method="post">
             {% csrf_token %}
-            {{form.as_p}}
-            <button class="btn btn-secondary">Edit Group</button>
+            {{form|crispy}}
+            <button class="btn btn-secondary mt-3">Edit Group</button>
         </form>
         </div>
 {% endblock content %}

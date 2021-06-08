@@ -52,13 +52,13 @@ class DeleteUserView(DeleteView):
 class EditGroupView(UpdateView):
     model = Groups
     form_class = EditGroupForm
-    success_url = reverse_lazy('users')
+    success_url = reverse_lazy('groups')
     template_name = 'base/edit_group.html'   
 
 
 class DeleteGroupView(DeleteView):
     model = Groups
-    success_url = reverse_lazy('users')
+    success_url = reverse_lazy('groups')
     template_name = 'base/delete_group.html'
 
 
